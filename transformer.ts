@@ -98,7 +98,7 @@ function parseType(type: ts.Type, tc: ts.TypeChecker, depth: number, history?: s
 
   if (flags === ts.TypeFlags.Object) {
     const objectType: ts.ObjectType = type as ts.ObjectType;
-    const name = objectType.symbol.name;
+    const name = objectType.symbol?.name;
 
     if (predefined[name]) {
       return ts.createObjectLiteral([
